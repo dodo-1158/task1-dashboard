@@ -1,0 +1,100 @@
+/* Sidebar Base Styles */
+.sidebar {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  width: 250px;
+  background-color: #003386;
+  color: white;
+  height: 100vh;
+  padding: 20px;
+  border-top: 1px solid gray;
+  transition: transform 0.3s ease;
+  z-index: 1999;
+}
+
+/* Hide Sidebar */
+
+
+/* Toggle Button */
+.toggleButton {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 2000;
+  display: none;
+}
+
+/* Navigation List */
+.navList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.navList li {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 15px 0;
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.navList li:hover {
+  color: #ddd;
+}
+
+.icon {
+  font-size: 20px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-85%)
+  }
+
+  .sidebar.hidden {
+    transform: translateX(0);
+  }
+
+  .toggleButton {
+    display: block;
+  }
+
+  .navList {
+    margin-top: 25px;
+  }
+
+  .menu {
+    font-size: 24px;
+    margin-left: 210px;
+    color: rgb(255, 255, 255);
+  }
+}
+
+@media (min-width: 769px) {
+  .sidebar {
+    transform: translateX(0) !important;
+
+    .navList {
+      margin-top: 25px;
+    }
+  }
+
+  .menu {
+    font-size: 24px;
+    margin-left: 210px;
+    color: rgb(255, 255, 255);
+  }
+}

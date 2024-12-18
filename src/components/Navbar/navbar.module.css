@@ -1,0 +1,142 @@
+/* navbar.module.css */
+.container {
+  height: 60px;
+  background-color: #003386;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  text-decoration: none;
+}
+
+.logoIcon {
+  width: 24px;
+  height: 24px;
+  color: white;
+  background-color: #00a2ff;
+  padding: 8px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.links {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  position: relative;
+}
+
+.navIcon {
+  width: 20px;
+  height: 20px;
+  color: white;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.navIcon:hover {
+  opacity: 0.8;
+}
+
+.profileSection {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.navImgProfile {
+  width: 35px;
+  height: 35px;
+  background-color: #e0e0e0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: absolute;
+  margin: 0;
+  top: 45px;
+  right: 0;
+  background: white;
+  color: #333;
+  width: 200px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 2000;
+  overflow: hidden;
+}
+
+.dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown ul li {
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dropdown ul li:hover {
+  background-color: #f5f5f5;
+}
+
+.dropdownIcon {
+  width: 16px;
+  height: 16px;
+  color: #666;
+}
+
+.mobileNavItem {
+  display: none;
+}
+
+.dropdown ul li:not(:last-child) {
+  border-bottom: 1px solid #eee;
+}
+
+.mobileNavItem {
+  display: none;
+}
+
+.mobileOnlySection {
+  display: none;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .hideOnMobile {
+    display: none;
+  }
+
+  .mobileNavItem {
+    display: flex;
+  }
+
+  .mobileOnlySection {
+    display: block;
+    border-bottom: 1px solid #eee;
+  }
+
+  .mobileOnlySection li:last-child {
+    border-bottom: none;
+  }
+}
