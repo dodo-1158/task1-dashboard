@@ -13,6 +13,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import Link from "next/link";
+import { urlToUrlWithoutFlightMarker } from "next/dist/client/components/router-reducer/fetch-server-response";
 
 // Utility function to format date
 const formatDate = (dateString) => {
@@ -36,6 +37,8 @@ const data = [
     modifiedBy: "Admin user",
     status: "Active",
     avatarUrl: "/slide1.jpg",
+    url: "/systemAdmin"
+
   },
   {
     id: 2,
@@ -45,6 +48,7 @@ const data = [
     modifiedBy: "Admin user",
     status: "Inactive",
     avatarUrl: "/slide2.jpg",
+    url: "/itUser"
   },
   {
     id: 3,
@@ -54,6 +58,7 @@ const data = [
     modifiedBy: "Admin user",
     status: "Inactive",
     avatarUrl: "/slide3.jpg",
+    url: "/itSupport"
   },
 ];
 
@@ -61,18 +66,8 @@ const data = [
 const Roles = () => {
   const [rows, setRows] = useState(data);
   const [openMenu, setOpenMenu] = useState(null);
-  const menuRef = useRef(null);
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (menuRef.current && !menuRef.current.contains(e.target)) {
-        setOpenMenu(null);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+
 
   const toggleMenu = (id) => {
     setOpenMenu(openMenu === id ? null : id);
@@ -137,7 +132,7 @@ const Roles = () => {
                     height={40} // Set image height
                     objectFit="cover" // Ensure the image covers the area
                   />
-                  <Link href={`/roles/${row.id}`}> {row.name} </Link>
+                  <Link href={row.url}> {row.name} </Link>
                 </div>
               </td>
               <td>{row.owner}</td>
@@ -150,7 +145,7 @@ const Roles = () => {
                 {row.status}
               </td>
               <td>
-                <div className={styles.actionWrapper} ref={menuRef}>
+                <div className={styles.actionWrapper} >
                   <button
                     onClick={() => toggleMenu(row.id)}
                     className={styles.actionButton}

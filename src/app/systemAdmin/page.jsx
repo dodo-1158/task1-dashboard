@@ -89,19 +89,10 @@ const initialRoleData = {
 const SystemAdmin = () => {
     const [rows, setRows] = useState(data);
     const [openMenu, setOpenMenu] = useState(null);
-    const menuRef = useRef(null);
+
     const [isClient, setIsClient] = useState(false); // To check if we are on the client side
 
-    // Close dropdown when clicking outside
-    useEffect(() => {
-        const handleClickOutside = (e) => {
-            if (menuRef.current && !menuRef.current.contains(e.target)) {
-                setOpenMenu(null);
-            }
-        };
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => document.removeEventListener("mousedown", handleClickOutside);
-    }, []);
+
 
     // Set the client-side state
     useEffect(() => {
@@ -331,7 +322,7 @@ const SystemAdmin = () => {
                                             {row.status}
                                         </td>
                                         <td>
-                                            <div className={styles.actionWrapper} ref={menuRef}>
+                                            <div className={styles.actionWrapper}>
                                                 <button
                                                     onClick={() => toggleMenu(row.id)}
                                                     className={styles.actionButton}

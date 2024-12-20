@@ -1,30 +1,29 @@
 "use client";
-
 import React from "react";
 import { useParams } from "next/navigation";
 import styles from "./page.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheckCircle, faTimesCircle } from "@fortawesome/free-solid-svg-icons";
+import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
 
 const roleData = {
-    "system-admin": {
-        id: 1,
-        name: "System Admin",
-        description:
-            "System administrators, also known as sysadmins, are IT professionals who ensure computer systems are functioning and meet organizational needs.",
-        services: {
-            "Library Services": [
-                { name: "Library", permissions: ["get", "list"] },
-                { name: "Author", permissions: ["create", "update", "delete", "get", "list"] },
-                { name: "Publication", permissions: ["create", "update", "delete", "get", "list"] },
-                { name: "Book", permissions: ["create", "update", "delete", "get", "list"] },
-                { name: "Book Issue", permissions: ["create", "update", "delete", "get", "list"] },
-                { name: "Penalty", permissions: ["create", "update", "delete", "get", "list"] },
-                { name: "Library Policy", permissions: ["create", "update", "delete", "get", "list"] },
-            ],
-            "Academic Services": [],
-            "Examination Services": [],
-        },
+    id: 1,
+    name: "System Admin",
+    description:
+        "System administrators, also known as sysadmins, are IT professionals who ensure computer systems are functioning and meet organizational needs.",
+    services: {
+        "Library Services": [
+            { name: "Library", permissions: ["get", "list"] },
+            { name: "Author", permissions: ["create", "update", "delete", "get", "list"] },
+            { name: "Publication", permissions: ["create", "update", "delete", "get", "list"] },
+            { name: "Book", permissions: ["create", "update", "delete", "get", "list"] },
+            { name: "Book Issue", permissions: ["create", "update", "delete", "get", "list"] },
+            { name: "Penalty", permissions: ["create", "update", "delete", "get", "list"] },
+            { name: "Library Policy", permissions: ["create", "update", "delete", "get", "list"] },
+        ],
+        "Academic Services": [],
+        "Examination Services": [],
+
     },
 
 };
@@ -50,6 +49,7 @@ const RoleDetails = () => {
 
     return (
         <div className={styles.container}>
+            <Breadcrumb />
             <h1>{role.name}</h1>
             <p>{role.description}</p>
 

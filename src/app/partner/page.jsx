@@ -59,18 +59,7 @@ const data = [
 const Page = () => {
   const [rows, setRows] = useState(data);
   const [openMenu, setOpenMenu] = useState(null);
-  const menuRef = useRef(null);
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (menuRef.current && !menuRef.current.contains(e.target)) {
-        setOpenMenu(null);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
 
   const toggleMenu = (id) => {
     setOpenMenu(openMenu === id ? null : id);
@@ -80,7 +69,7 @@ const Page = () => {
     const updatedRows = rows.map((row) => {
       if (row.id === id) {
         if (action === "activate") {
-          // Toggle the status between 'Active' and 'Inactive'
+
           row.status = row.status === "Active" ? "Inactive" : "Active";
         } else if (action === "delete") {
           return null;
@@ -88,13 +77,14 @@ const Page = () => {
       }
       return row;
     });
-    setRows(updatedRows.filter(Boolean)); // Remove deleted items
+    setRows(updatedRows.filter(Boolean));
     setOpenMenu(null);
   };
 
+
+
   return (
     <div className={styles.container}>
-      {/* Header Section */}
       <div className={styles.header}>
         <h1 className={styles.title}>Partner</h1>
         <div className={styles.controls}>
@@ -108,7 +98,6 @@ const Page = () => {
         </div>
       </div>
 
-      {/* Table Section */}
       <table className={styles.table}>
         <thead>
           <tr>
@@ -125,30 +114,28 @@ const Page = () => {
             <tr key={row.id} className={styles.row}>
               <td className={styles.cell}>
                 <div className={styles.profile}>
-                  {/* Use Next.js Image component */}
                   <Image
-                    src={row.avatarUrl} // Avatar image URL
-                    alt={`${row.name} avatar`} // Alt text for accessibility
-                    className={styles.avatar} // Apply styling to the avatar
-                    width={40} // Set image width
-                    height={40} // Set image height
-                    objectFit="cover" // Ensure the image covers the area
+                    src={row.avatarUrl}
+                    alt={`${row.name} avatar`}
+                    className={styles.avatar}
+                    width={40}
+                    height={40}
+                    objectFit="cover"
                   />
                   {row.name}
                 </div>
               </td>
               <td>{row.owner}</td>
-              <td>{formatDate(row.lastModified)}</td> {/* Format the date */}
+              <td>{formatDate(row.lastModified)}</td>
               <td>{row.modifiedBy}</td>
               <td
-                className={`${styles.status} ${
-                  row.status === "Active" ? styles.active : styles.inactive
-                }`}
+                className={`${styles.status} ${row.status === "Active" ? styles.active : styles.inactive
+                  }`}
               >
                 {row.status}
               </td>
               <td>
-                <div className={styles.actionWrapper} ref={menuRef}>
+                <div className={styles.actionWrapper} >
                   <button
                     onClick={() => toggleMenu(row.id)}
                     className={styles.actionButton}
@@ -185,7 +172,6 @@ const Page = () => {
         </tbody>
       </table>
 
-      {/* Pagination Section */}
       <div className={styles.pagination}>
         <button className={styles.navButton}>«</button>
         <span>1</span>

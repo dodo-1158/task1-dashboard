@@ -168,7 +168,7 @@
 
 .editicon {
     display: flex;
-    font-size: 20px;
+    font-size: 24px;
     align-items: flex-end;
 }
 
@@ -183,7 +183,7 @@
 
 .editIcon {
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     /* Ensures extreme left placement */
     align-items: center;
     margin-right: 16px;
@@ -207,7 +207,7 @@
     align-items: center;
     padding: 16px 24px;
     cursor: pointer;
-    /* border-bottom: 1px solid #e5e7eb; */
+    border-bottom: 1px solid #e5e7eb;
 }
 
 .sectionHeader h3 {
@@ -231,7 +231,6 @@
 .table {
     width: 100%;
     border-collapse: collapse;
-
 }
 
 .table th,
