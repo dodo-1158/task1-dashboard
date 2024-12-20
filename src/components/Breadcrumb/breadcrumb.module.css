@@ -1,0 +1,18 @@
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.breadcrumb a {
+    color: black;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    color: blue;
+}
+
+.breadcrumb span {
+    margin: 0 5px;
+}

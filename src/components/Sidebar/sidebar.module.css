@@ -1,4 +1,4 @@
-/* Sidebar Base Styles */
+/* Sidebar Styles */
 .sidebar {
   position: fixed;
   top: 60px;
@@ -13,8 +13,14 @@
   z-index: 1999;
 }
 
-/* Hide Sidebar */
+/* Hidden and Visible Sidebar States */
+.hidden {
+  transform: translateX(-85%);
+}
 
+.visible {
+  transform: translateX(0);
+}
 
 /* Toggle Button */
 .toggleButton {
@@ -40,61 +46,53 @@
   gap: 0px;
 }
 
-.navList li {
+.navItem {
   display: flex;
   align-items: center;
   gap: 20px;
   margin: 15px 0;
   font-size: 16px;
+  color: white;
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
-.navList li:hover {
-  color: #ddd;
+.navItem a {
+  text-decoration: none;
+  color: inherit;
 }
 
+/* Hover Effect */
+.navItem:hover {
+  color: #cac9c9;
+}
+
+/* Active Link Style */
+.active {
+  color: #cac9c9;
+  font-weight: bold;
+}
+
+/* Icons */
 .icon {
   font-size: 20px;
 }
 
 /* Media Queries */
 @media (max-width: 768px) {
-  .sidebar {
-    transform: translateX(-85%)
-  }
-
-  .sidebar.hidden {
-    transform: translateX(0);
-  }
-
   .toggleButton {
     display: block;
-  }
-
-  .navList {
-    margin-top: 25px;
   }
 
   .menu {
     font-size: 24px;
     margin-left: 210px;
-    color: rgb(255, 255, 255);
+    color: white;
   }
 }
 
 @media (min-width: 769px) {
   .sidebar {
     transform: translateX(0) !important;
-
-    .navList {
-      margin-top: 25px;
-    }
-  }
-
-  .menu {
-    font-size: 24px;
-    margin-left: 210px;
-    color: rgb(255, 255, 255);
   }
 }
