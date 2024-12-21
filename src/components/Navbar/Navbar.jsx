@@ -4,10 +4,10 @@ import React, { useEffect, useRef, useState } from 'react'
 import styles from './navbar.module.css'
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { 
-  faUser, 
-  faBell, 
-  faMessage, 
+import {
+  faUser,
+  faBell,
+  faMessage,
   faCaretDown,
   faRightFromBracket,
   faGear,
@@ -37,7 +37,7 @@ const Navbar = () => {
 
   return (
     <div className={styles.container}>
-      <Link href="/" className={styles.logo}>
+      <Link href="/dashboard" className={styles.logo}>
         <FontAwesomeIcon icon={faUser} className={styles.logoIcon} />
       </Link>
 
@@ -54,50 +54,50 @@ const Navbar = () => {
           <div className={styles.navImgProfile}>
             <FontAwesomeIcon icon={faUser} />
           </div>
-          
-          <FontAwesomeIcon 
-            icon={faCaretDown} 
-            className={styles.navIcon} 
-            ref={dropdownRef} 
+
+          <FontAwesomeIcon
+            icon={faCaretDown}
+            className={styles.navIcon}
+            ref={dropdownRef}
             onClick={toggleDropdown}
           />
         </div>
 
         {open && (
-  <div className={styles.dropdown}>
-    <ul>
-      {/* Show these items only on mobile */}
-      <div className={styles.mobileOnlySection}>
-        <li className={styles.mobileNavItem}>
-          <FontAwesomeIcon icon={faBell} className={styles.dropdownIcon} />
-          <span>Notifications</span>
-        </li>
-        <li className={styles.mobileNavItem}>
-          <FontAwesomeIcon icon={faMessage} className={styles.dropdownIcon} />
-          <span>Chat</span>
-        </li>
-      </div>
-      
-      {/* These items always show */}
-      <li>
-        <FontAwesomeIcon icon={faUser} className={styles.dropdownIcon} />
-        <span>Profile</span>
-      </li>
-      <li>
-        <FontAwesomeIcon icon={faGear} className={styles.dropdownIcon} />
-        <span>Settings</span>
-      </li>
-      <li>
-        <FontAwesomeIcon icon={faCircleQuestion} className={styles.dropdownIcon} />
-        <span>Need Help</span>
-      </li>
-      <li>
-        <FontAwesomeIcon icon={faRightFromBracket} className={styles.dropdownIcon} />
-        <span>Logout</span>
-      </li>
-    </ul>
-  </div>
-)}
+          <div className={styles.dropdown}>
+            <ul>
+              {/* Show these items only on mobile */}
+              <div className={styles.mobileOnlySection}>
+                <li className={styles.mobileNavItem}>
+                  <FontAwesomeIcon icon={faBell} className={styles.dropdownIcon} />
+                  <span>Notifications</span>
+                </li>
+                <li className={styles.mobileNavItem}>
+                  <FontAwesomeIcon icon={faMessage} className={styles.dropdownIcon} />
+                  <span>Chat</span>
+                </li>
+              </div>
+
+              {/* These items always show */}
+              <li>
+                <FontAwesomeIcon icon={faUser} className={styles.dropdownIcon} />
+                <span>Profile</span>
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faGear} className={styles.dropdownIcon} />
+                <span>Settings</span>
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faCircleQuestion} className={styles.dropdownIcon} />
+                <span>Need Help</span>
+              </li>
+              <li>
+                <FontAwesomeIcon icon={faRightFromBracket} className={styles.dropdownIcon} />
+                <span>Logout</span>
+              </li>
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   )

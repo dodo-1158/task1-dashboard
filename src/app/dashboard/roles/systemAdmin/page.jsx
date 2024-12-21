@@ -18,7 +18,7 @@ import {
     faTimes,
 
 } from "@fortawesome/free-solid-svg-icons";
-import Breadcrumb from "@/components/Breadcrumb/Breadcrumb";
+import Breadcrumb from "../../../../components/Breadcrumb/Breadcrumb";
 import styles from "./page.module.css";
 import Image from "next/image"; // Make sure you import the Image component
 import { faCalendar } from "@fortawesome/free-regular-svg-icons";

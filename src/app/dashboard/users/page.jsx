@@ -11,9 +11,7 @@ import {
   faEdit,
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
-import Image from "next/image";
-import Link from "next/link";
-import { urlToUrlWithoutFlightMarker } from "next/dist/client/components/router-reducer/fetch-server-response";
+import Image from "next/image"; // Import Next.js Image component
 
 // Utility function to format date
 const formatDate = (dateString) => {
@@ -33,40 +31,34 @@ const data = [
     id: 1,
     name: "System Admin",
     owner: "Admin user",
-    lastModified: "2024-08-30T19:30:00",
+    lastModified: "2024-08-30T19:30:00", // ISO 8601 format
     modifiedBy: "Admin user",
     status: "Active",
-    avatarUrl: "/slide1.jpg",
-    url: "/systemAdmin"
-
+    avatarUrl: "/slide1.jpg", // Avatar image URL
   },
   {
     id: 2,
-    name: "IT User",
+    name: "IT user",
     owner: "Admin user",
-    lastModified: "2024-08-30T19:30:00",
+    lastModified: "2024-08-30T19:30:00", // ISO 8601 format
     modifiedBy: "Admin user",
     status: "Inactive",
-    avatarUrl: "/slide2.jpg",
-    url: "/itUser"
+    avatarUrl: "/slide2.jpg", // Avatar image URL
   },
   {
     id: 3,
     name: "IT Support",
     owner: "Admin user",
-    lastModified: "2024-08-30T19:30:00",
+    lastModified: "2024-08-30T19:30:00", // ISO 8601 format
     modifiedBy: "Admin user",
     status: "Inactive",
-    avatarUrl: "/slide3.jpg",
-    url: "/itSupport"
+    avatarUrl: "/slide3.jpg", // Avatar image URL
   },
 ];
 
-
-const Roles = () => {
+const Page = () => {
   const [rows, setRows] = useState(data);
   const [openMenu, setOpenMenu] = useState(null);
-
 
 
   const toggleMenu = (id) => {
@@ -77,7 +69,7 @@ const Roles = () => {
     const updatedRows = rows.map((row) => {
       if (row.id === id) {
         if (action === "activate") {
-          // Toggle the status between 'Active' and 'Inactive'
+
           row.status = row.status === "Active" ? "Inactive" : "Active";
         } else if (action === "delete") {
           return null;
@@ -85,16 +77,16 @@ const Roles = () => {
       }
       return row;
     });
-    setRows(updatedRows.filter(Boolean)); // Remove deleted items
+    setRows(updatedRows.filter(Boolean));
     setOpenMenu(null);
   };
 
-  return (
 
+
+  return (
     <div className={styles.container}>
-      {/* Header Section */}
       <div className={styles.header}>
-        <h1 className={styles.title}>Role</h1>
+        <h1 className={styles.title}>Users</h1>
         <div className={styles.controls}>
           <div className={styles.searchBar}>
             <FontAwesomeIcon icon={faSearch} className={styles.icon} />
@@ -106,7 +98,6 @@ const Roles = () => {
         </div>
       </div>
 
-      {/* Table Section */}
       <table className={styles.table}>
         <thead>
           <tr>
@@ -123,20 +114,19 @@ const Roles = () => {
             <tr key={row.id} className={styles.row}>
               <td className={styles.cell}>
                 <div className={styles.profile}>
-                  {/* Use Next.js Image component */}
                   <Image
-                    src={row.avatarUrl} // Avatar image URL
-                    alt={`${row.name} avatar`} // Alt text for accessibility
-                    className={styles.avatar} // Apply styling to the avatar
-                    width={40} // Set image width
-                    height={40} // Set image height
-                    objectFit="cover" // Ensure the image covers the area
+                    src={row.avatarUrl}
+                    alt={`${row.name} avatar`}
+                    className={styles.avatar}
+                    width={40}
+                    height={40}
+                    objectFit="cover"
                   />
-                  <Link href={row.url}> {row.name} </Link>
+                  {row.name}
                 </div>
               </td>
               <td>{row.owner}</td>
-              <td>{formatDate(row.lastModified)}</td> {/* Format the date */}
+              <td>{formatDate(row.lastModified)}</td>
               <td>{row.modifiedBy}</td>
               <td
                 className={`${styles.status} ${row.status === "Active" ? styles.active : styles.inactive
@@ -182,7 +172,6 @@ const Roles = () => {
         </tbody>
       </table>
 
-      {/* Pagination Section */}
       <div className={styles.pagination}>
         <button className={styles.navButton}>«</button>
         <span>1</span>
@@ -190,12 +179,6 @@ const Roles = () => {
       </div>
     </div>
   );
+};
 
-}
-
-export default Roles
-
-
-
-
-
+export default Page;

@@ -52,17 +52,17 @@ const Sidebar = () => {
 
       <ul className={styles.navList}>
         {[
-          { path: "/", label: "Dashboard", icon: <FaTachometerAlt /> },
-          { path: "/partner", label: "Partners", icon: <FaUsers /> },
-          { path: "/roles", label: "Roles", icon: <FaUserShield /> },
-          { path: "/users", label: "Users", icon: <FaUser /> },
-          { path: "/department", label: "Department", icon: <FaBuilding /> },
-          { path: "/groups", label: "Groups", icon: <FaLayerGroup /> },
-          { path: "/services", label: "Services", icon: <FaShieldAlt /> },
-          { path: "/plans", label: "Plans", icon: <FaClipboardList /> },
-          { path: "/license", label: "License", icon: <FaKey /> },
-          { path: "/billdesk", label: "Bill Desk", icon: <FaFileInvoice /> },
-          { path: "/settings", label: "Settings", icon: <FaCog /> },
+          { path: "/dashboard", label: "Dashboard", icon: <FaTachometerAlt /> },
+          { path: "/dashboard/partner", label: "Partners", icon: <FaUsers /> },
+          { path: "/dashboard/roles", label: "Roles", icon: <FaUserShield /> },
+          { path: "/dashboard/users", label: "Users", icon: <FaUser /> },
+          { path: "/dashboard/department", label: "Department", icon: <FaBuilding /> },
+          { path: "/dashboard/groups", label: "Groups", icon: <FaLayerGroup /> },
+          { path: "/dashboard/services", label: "Services", icon: <FaShieldAlt /> },
+          { path: "/dashboard/plans", label: "Plans", icon: <FaClipboardList /> },
+          { path: "/dashboard/license", label: "License", icon: <FaKey /> },
+          { path: "/dashboard/billdesk", label: "Bill Desk", icon: <FaFileInvoice /> },
+          { path: "/dashboard/settings", label: "Settings", icon: <FaCog /> },
         ].map((link) => (
           <li
             key={link.path}
