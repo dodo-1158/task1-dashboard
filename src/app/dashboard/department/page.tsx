@@ -12,6 +12,7 @@ interface Department {
   lastModified: string;
   modifiedBy: string;
   status: 'Active' | 'Inactive';
+
 }
 
 const DepartmentDashboard = () => {
@@ -157,7 +158,7 @@ const DepartmentDashboard = () => {
             />
             <span className="search-icon">🔍</span>
           </div>
-          <button 
+          <button
             className="create-button"
             onClick={() => setIsModalOpen(true)}
           >
@@ -172,7 +173,7 @@ const DepartmentDashboard = () => {
             <tr>
               {['name', 'owner', 'lastModified', 'modifiedBy', 'status'].map((field) => (
                 <th key={field} onClick={() => handleSort(field as keyof Department)} className="sortable-header">
-                  {field.charAt(0).toUpperCase() + field.slice(1)} 
+                  {field.charAt(0).toUpperCase() + field.slice(1)}
                   {sortField === field && (sortDirection === 'asc' ? '↑' : '↓')}
                 </th>
               ))}
@@ -289,7 +290,7 @@ const DepartmentDashboard = () => {
           <div className="modal">
             <div className="modal-header">
               <h2 className="modal-title">Create Department</h2>
-              <button 
+              <button
                 onClick={() => setIsModalOpen(false)}
                 className="close-button"
               >

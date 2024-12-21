@@ -22,6 +22,7 @@ main {
   flex-direction: row;
   justify-content: space-between;
 }
+
 .container {
   max-width: 1366px;
   min-height: 100vh;
@@ -36,31 +37,39 @@ main {
 .main-layout {
   display: flex;
   flex-direction: row;
-  min-height: 100vh; /* Ensures full height */
+  min-height: 100vh;
+  /* Ensures full height */
   width: 100%;
 }
 
 /* Content Area Styling */
 .content-area {
   margin-top: 60px;
-  flex: 1; /* Takes remaining width */
-  margin-left: 250px; /* Equal to the sidebar's width */
-  padding: 20px; /* Add some space */
-  background-color: #fff; /* White background */
+  flex: 1;
+  /* Takes remaining width */
+  margin-left: 250px;
+  /* Equal to the sidebar's width */
+  padding: 20px;
+  /* Add some space */
+  background-color: #fff;
+  /* White background */
   overflow-y: auto;
 }
 
 @media (max-width: 480px) {
+
   /* Styles for mobile devices */
   .content-area {
     margin-left: 40px;
-    
+
   }
 }
 
 @media (max-width: 768px) {
+
   /* Styles for smaller tablets and large phones */
   .content-area {
     margin-left: 40px;
+    padding: 0;
   }
 }
