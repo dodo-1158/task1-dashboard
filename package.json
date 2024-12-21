@@ -16,7 +16,8 @@
     "next": "15.1.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-icons": "^5.4.0"
+    "react-icons": "^5.4.0",
+    "task-1": "file:"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
