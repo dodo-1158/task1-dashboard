@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family: "Inter", sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.container {
+    max-width: 1366px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 0 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Main Layout */
+.main-layout {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    /* Ensures full height */
+    width: 100%;
+}
+
+/* Content Area Styling */
+.content-area {
+    margin-top: 60px;
+    flex: 1;
+    /* Takes remaining width */
+    margin-left: 300px;
+    /* Equal to the sidebar's width */
+    padding: 20px;
+    /* Add some space */
+    background-color: #fff;
+    /* White background */
+    overflow-y: auto;
+}
+
+@media (max-width: 480px) {
+
+    /* Styles for mobile devices */
+    .content-area {
+        margin-left: 40px;
+
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Styles for smaller tablets and large phones */
+    .content-area {
+        margin-left: 40px;
+        padding: 0;
+    }
+}

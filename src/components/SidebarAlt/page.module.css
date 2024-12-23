@@ -1,0 +1,14 @@
+.container {
+
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 300px;
+    background-color: #003386;
+    color: white;
+    height: 100vh;
+    padding: 20px;
+    border-top: 1px solid gray;
+    transition: transform 0.3s ease;
+    z-index: 1999;
+}
