@@ -20,7 +20,6 @@ const devmodeGroups = () => {
     };
 
 
-
     return (
         <div className={styles.container}>
             <Breadcrumb />
