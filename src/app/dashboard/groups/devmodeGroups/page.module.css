@@ -1,0 +1,158 @@
+.container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+
+}
+
+.topWrapper {
+    width: 100%;
+    padding: 24px;
+    background: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 60px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.top {
+    margin-bottom: 20px;
+    flex: 2;
+}
+
+
+.info {
+    max-width: fit-content;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    color: #000;
+    font-size: 14px;
+}
+
+.info div {
+    display: flex;
+    gap: 10px;
+}
+
+.info .icon {
+    font-size: 16px;
+    margin-right: 8px;
+    color: #000;
+}
+
+.info span {
+    display: flex;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.menu .title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #111827;
+    margin: 0;
+}
+
+.menu .icon {
+    color: #003285;
+    cursor: pointer;
+    font-size: 26px;
+    padding: 8px;
+    margin-right: 40px;
+}
+
+.desc {
+    max-width: 80%;
+    color: #4b5563;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+
+}
+
+.info .title {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.list {
+    z-index: 99999;
+}
+
+/* Tablet and Mobile */
+@media (max-width: 1024px) {
+
+    .topWrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .desc {
+        font-size: 14px;
+    }
+
+    .info {
+        gap: 0px;
+    }
+
+    .header {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .controls {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .title {
+        font-size: 20px;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+}
+
+@media (max-width:768px) {
+
+    .top {
+        margin-top: 30px;
+    }
+
+    .topWrapper {
+
+        margin: 0;
+        padding: 0;
+    }
+
+    .menu {
+
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu .icon {
+        font-size: 24px;
+    }
+
+    .menu .title {
+        margin-bottom: 5px;
+        font-size: 24px;
+        text-align: left;
+    }
+
+    .desc {
+        line-height: 1rem;
+    }
+
+}

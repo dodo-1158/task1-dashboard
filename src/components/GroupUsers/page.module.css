@@ -1,0 +1,298 @@
+.container {
+    width: 100%;
+    z-index: 9999;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.addButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #EEF2FF;
+    color: #003386;
+    border-radius: 0.5rem;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.addButton:hover {
+    background-color: #E0E7FF;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+}
+
+.modalContent {
+    background-color: white;
+    border-radius: 0.5rem;
+    width: 100%;
+    max-width: 28rem;
+    margin: 0 1rem;
+}
+
+.modalHeader {
+    background-color: #003386;
+    padding: 1rem;
+    color: white;
+    font-weight: 500;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modalBody {
+    padding: 1rem;
+}
+
+.tabButtons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.tabButton {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    border: none;
+}
+
+.activeTab {
+    background-color: #003386;
+    color: white;
+}
+
+.inactiveTab {
+    background-color: #F3F4F6;
+}
+
+.searchInput {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9CA3AF;
+}
+
+.input {
+    width: 100%;
+    padding: 0.5rem 1rem 0.5rem 2.5rem;
+    border: 1px solid #E5E7EB;
+    border-radius: 0.375rem;
+    background-color: #F9FAFB;
+}
+
+.usersList {
+    max-height: 15rem;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+}
+
+.userItem {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+}
+
+.userItem:hover {
+    background-color: #F9FAFB;
+}
+
+.userItemSelected {
+    background-color: #EEF2FF;
+}
+
+.avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999px;
+    background-color: #E5E7EB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formGroup {
+    margin-bottom: 1rem;
+}
+
+.label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.25rem;
+}
+
+.select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #E5E7EB;
+    border-radius: 0.375rem;
+}
+
+.modalFooter {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #E5E7EB;
+}
+
+.closebutton {
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    border: none;
+    color: #fff;
+    background-color: #003386;
+}
+
+
+
+.button {
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    border: none;
+    color: #fff;
+    background-color: #003386;
+}
+
+
+.cancelButton {
+    color: #4B5563;
+    background-color: #F3F4F6;
+    border: none;
+}
+
+.cancelButton:hover {
+    background-color: #E5E7EB;
+}
+
+.submitButton {
+    background-color: #003386;
+    color: white;
+}
+
+.submitButton:hover {
+    background-color: #003995;
+}
+
+.submitButton:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.userCard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border: 1px solid #E5E7EB;
+    border-radius: 0.5rem;
+    background-color: white;
+    margin-bottom: 0.75rem;
+}
+
+.userInfo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.userDetails {
+    display: flex;
+    flex-direction: column;
+}
+
+.userName {
+    font-weight: 500;
+}
+
+.userRole {
+    font-size: 0.875rem;
+    color: #6B7280;
+}
+
+.actionButtons {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.editButton {
+    padding: 0.5rem;
+    color: #4B5563;
+    border-radius: 0.375rem;
+    border: none;
+    background-color: #fff;
+}
+
+.editButton:hover {
+    color: #000000;
+}
+
+.removeButton {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.75rem;
+    color: #DC2626;
+    background-color: #FEF2F2;
+    border-radius: 0.375rem;
+    border: none;
+
+}
+
+.removeButton:hover {
+    background-color: #FEE2E2;
+}
+
+
+/* Tablet and Mobile */
+@media (max-width: 1024px) {
+
+    .container {
+        margin-top: 15px;
+        padding: 0;
+    }
+
+    .modal {
+
+        z-index: 99999;
+    }
+
+
+}

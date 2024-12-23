@@ -20,7 +20,7 @@ interface Department {
   url: string;
 }
 
-const Roles = () => {
+const Groups = () => {
   const router = useRouter();
   const [departments, setDepartments] = useState<Department[]>([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -409,4 +409,4 @@ const Roles = () => {
   );
 };
 
-export default Roles;
+export default Groups;
