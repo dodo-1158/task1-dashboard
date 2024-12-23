@@ -1,8 +1,7 @@
-// Navbar.jsx
 "use client"
 import React, { useEffect, useRef, useState } from 'react'
 import styles from './navbar.module.css'
-import Link from 'next/link'
+import Link from 'next/link'; // Import next/link
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faUser,
@@ -16,6 +15,7 @@ import {
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Manage login state
   const dropdownRef = useRef(null);
 
   const toggleDropdown = () => {
@@ -35,6 +35,11 @@ const Navbar = () => {
     };
   }, []);
 
+  // Handle login/logout toggle
+  const handleLoginLogout = () => {
+    setIsLoggedIn(prev => !prev);
+  };
+
   return (
     <div className={styles.container}>
       <Link href="/dashboard" className={styles.logo}>
@@ -42,13 +47,13 @@ const Navbar = () => {
       </Link>
 
       <div className={styles.links}>
-        <Link href="#" className={styles.hideOnMobile}>
+        <a href="#" className={styles.hideOnMobile}>
           <FontAwesomeIcon icon={faBell} className={styles.navIcon} />
-        </Link>
+        </a>
 
-        <Link href="#" className={styles.hideOnMobile}>
+        <a href="#" className={styles.hideOnMobile}>
           <FontAwesomeIcon icon={faMessage} className={styles.navIcon} />
-        </Link>
+        </a>
 
         <div className={styles.profileSection}>
           <div className={styles.navImgProfile}>
@@ -79,22 +84,37 @@ const Navbar = () => {
               </div>
 
               {/* These items always show */}
-              <li>
-                <FontAwesomeIcon icon={faUser} className={styles.dropdownIcon} />
-                <span>Profile</span>
-              </li>
-              <li>
-                <FontAwesomeIcon icon={faGear} className={styles.dropdownIcon} />
-                <span>Settings</span>
-              </li>
-              <li>
-                <FontAwesomeIcon icon={faCircleQuestion} className={styles.dropdownIcon} />
-                <span>Need Help</span>
-              </li>
-              <li>
-                <FontAwesomeIcon icon={faRightFromBracket} className={styles.dropdownIcon} />
-                <span>Logout</span>
-              </li>
+              {isLoggedIn ? (
+                <>
+                  <li>
+                    <FontAwesomeIcon icon={faUser} className={styles.dropdownIcon} />
+                    <span>Profile</span>
+                  </li>
+                  <li>
+                    <FontAwesomeIcon icon={faGear} className={styles.dropdownIcon} />
+                    <span>Settings</span>
+                  </li>
+                  <li>
+                    <FontAwesomeIcon icon={faCircleQuestion} className={styles.dropdownIcon} />
+                    <span>Need Help</span>
+                  </li>
+                  <li>
+                    <FontAwesomeIcon icon={faRightFromBracket} className={styles.dropdownIcon} />
+                    <span onClick={handleLoginLogout}>Logout</span>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li>
+                    <FontAwesomeIcon icon={faUser} className={styles.dropdownIcon} />
+                    <Link href="/login">Login</Link>
+                  </li>
+                  <li>
+                    <FontAwesomeIcon icon={faUser} className={styles.dropdownIcon} />
+                    <Link href="/register/user">Register</Link>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
         )}
@@ -103,4 +123,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar;

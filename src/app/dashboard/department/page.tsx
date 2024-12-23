@@ -69,7 +69,7 @@ const DepartmentDashboard = () => {
 
   // Navigate to a department detail page
   const handleDepartmentClick = (id: string) => {
-    router.push(`/department/${id}`);
+    router.push(`/dashboard/department/${id}`);
   };
 
   // Handle sorting logic
@@ -185,7 +185,7 @@ const DepartmentDashboard = () => {
                 <td className="table-cell">
                   <div className="department-info">
                     <div className="department-icon"></div>
-                    <span className="department-name">{dept.name}</span>
+                    <span className="department-name" onClick={()=>handleDepartmentClick(dept.id)}>{dept.name}</span>
                   </div>
                 </td>
                 <td className="table-cell">{dept.owner}</td>
